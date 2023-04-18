@@ -18,18 +18,13 @@
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-  var marker = L.marker([51.5, -0.09]).addTo(map);
-  var circle = L.circle([51.508, -0.11], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 500
-}).addTo(map);
-  var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]
-]).addTo(map);
+   {% for marker in markers %}
+      L.marker([{{ marker['lat'] }}, {{ marker['lon'] }}]).addTo(map)
+      .bindPopup("{{ marker['popup'] }}")
+      .openPopup();
+    {% endfor %}
+
+
 </script>
 </head>
 <body>
