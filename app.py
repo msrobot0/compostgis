@@ -3,7 +3,7 @@ import gunicorn
 app = Flask(__name__, template_folder='templates')
 @app.route('/')
 def index():
-    markers=[
+   markers=[
         {
         'lat':0,
         'lon':0,
