@@ -5,9 +5,9 @@ app = Flask(__name__, template_folder='templates')
 def index():
    markers=[
         {
-        'lat':0,
-        'lon':0,
-        'popup':'This is the middle of the map.'
+        'lat':40.7,
+        'lon':-73.9,
+        'popup':'This is nyc.'
         }
    ]
    return render_template('index.html',markers=markers)
