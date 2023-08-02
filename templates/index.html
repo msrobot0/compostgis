@@ -21,8 +21,10 @@
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
   var serviceUrl =
+    //"https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/MAPPLUTO/FeatureServer/0"
     "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/MAPPLUTO/FeatureServer/0"
-   L.esri.featureLayer({url:serviceUrl}).addTo(map)
+  //"/query?where=LotArea+%3E+10890"
+  L.esri.featureLayer({url:serviceUrl,where:'LotArea>=10000 and LandUse=11'}).addTo(map)
 
 
    {% for marker in markers %}
